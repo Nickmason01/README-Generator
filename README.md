@@ -2,7 +2,7 @@
   # README Generator
 
 ## Description
-This is a generator to create professional README files for your repos
+A generator to create professional README files for your projects 
 
 ## Table of Contents 
 
@@ -16,7 +16,7 @@ download code from github and run through your terminal to answer the prompts
 
 
 ## Usage
-Use this app to create professional readme files isntantly for your projects
+Use this app to create professional readme files isntantly for your projects. By answering the prompts the corresponding information is then added to the generated README file. 
 
 ## Credits
 Nick Mason
@@ -29,15 +29,6 @@ Nick Mason
 https://opensource.org/licenses/MIT
 
 
-
-## Badges
-
-
-## Features
-
-
-## Tests
-no tests
 
 ##Questions
 
