@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//renders the badge image for the corresponding license if one was selected 
 function renderLicenseBadge(license) {
  if(license === "Apache"){
   return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
@@ -16,8 +15,7 @@ function renderLicenseBadge(license) {
 
 
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+//creates a link to the license documentation if one is chosen 
 function renderLicenseLink(license) {
   if(license === "Apache"){
     return "https://opensource.org/licenses/Apache-2.0"
@@ -30,18 +28,9 @@ function renderLicenseLink(license) {
    }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  if (license === " "){
-    return ""
-  }else {
-    return `## License ${license}`
-  }
- 
-}
 
-// TODO: Create a function to generate markdown for README
+
+//creates the ecample readme file 
 function generateMarkdown(data) {
   return `
   # ${data.name}
