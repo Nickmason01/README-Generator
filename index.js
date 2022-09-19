@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer =require('inquirer')
 const fs = require('fs')
-const Markdown = require('./generateMarkdown')
+// const Markdown = require('./generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
 inquirer
@@ -39,7 +40,7 @@ inquirer
     {
         type: 'list',
         message:'Choose your perferred License',
-        choices: ["MIT", 'GNU', 'Apache'],
+        choices: ["MIT", 'GNU', 'Apache', 'none'],
         name:'license'
     },
     {
@@ -55,7 +56,7 @@ inquirer
 ])
 .then((response) => {
     console.log(response)
-     fs.writeFile('README.md',generateReadme(response), err => {
+     fs.writeFile('README.md',generateMarkdown(response), err => {
         if (err) {
           console.error(err);
         }})
@@ -64,50 +65,54 @@ inquirer
  
   );
 
-const generateReadme = ({name, description, installation, usage, contributions, test, license, email, Github}) =>
-`# ${name}
+// const generateReadme = ({name, description, installation, usage, contributions, test, license, email, Github}) =>
+// `# ${name}
 
-## Description
-${description}
+// ## Description
+// ${description}
 
-## Table of Contents 
+// ## Table of Contents 
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+// - [Installation](#installation)
+// - [Usage](#usage)
+// - [Credits](#credits)
+// - [License](#license)
 
-## Installation
-${installation}
-
-
-## Usage
-${usage}
-
-## Credits
-${contributions}
+// ## Installation
+// ${installation}
 
 
+// ## Usage
+// ${usage}
 
-## License
-${license}
+// ## Credits
+// ${contributions}
 
 
 
-## Badges
+// ## License
+// ${license}
 
 
-## Features
+
+// ## Badges
 
 
-## Tests
-${test}
+// ## Features
 
-##Contact
-${email}
-${Github}
 
-`
+// ## Tests
+// ${test}
+
+// ##Contact
+
+// For additional information please visit my  GitHub profile at:
+//   <p><a href=${Github}</a></p>
+//   For additional questions, please email at 
+//   <p><a href="mailto: ${email}">Send Message</a></p>
+
+
+// `
 
 
 

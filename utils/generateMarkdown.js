@@ -2,13 +2,15 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
  if(license === "Apache"){
-  return `https://img.shields.io/badge/License-Apache_2.0-blue.svg`
- }else if(license === 'GNU'){
-  return `https://img.shields.io/badge/License-GPLv3-blue.svg`
- }else if( license === 'MIT'){
-  return `https://img.shields.io/badge/License-MIT-yellow.svg`
- }else{
-  return ""
+  return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
+ }
+ if(license === 'GNU'){
+  return `![License](https://img.shields.io/badge/License-GPLv3-blue.svg)`
+ }
+ if( license === 'MIT'){
+  return `![License](https://img.shields.io/badge/License-MIT-yellow.svg)`}
+ else{
+  return " "
  }
  }
 
@@ -24,7 +26,7 @@ function renderLicenseLink(license) {
    }else if( license === 'MIT'){
     return "https://opensource.org/licenses/MIT"
    }else{
-    return ""
+    return " "
    }
 }
 
@@ -41,7 +43,49 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}`
+  return `
+  # ${data.name}
+
+## Description
+${data.description}
+
+## Table of Contents 
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
+## Installation
+${data.installation}
+
+
+## Usage
+${data.usage}
+
+## Credits
+${data.contributions}
+
+
+
+## License
+${renderLicenseBadge(data.license)}
+
+${renderLicenseLink(data.license)}
+
+## Tests
+${data.test}
+
+##Questions
+
+For additional information please visit my  GitHub profile at:
+  <p><a href="https://www.Github.com/${data.Github}">Profile</a></P>
+  For additional questions, please email at 
+  <p><a href="mailto: ${data.email}">Send Message</a></p>
+
+
+`
+  
 }
 
 module.exports = generateMarkdown;
