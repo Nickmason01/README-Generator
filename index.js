@@ -56,7 +56,7 @@ inquirer
 ])
 .then((response) => {
     console.log(response)
-     fs.writeFile('README.md',generateMarkdown(response), err => {
+     fs.writeFile('ExampleREADME.md',generateMarkdown(response), err => {
         if (err) {
           console.error(err);
         }})
