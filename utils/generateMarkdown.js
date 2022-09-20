@@ -1,4 +1,4 @@
-//renders the badge image for the corresponding license if one was selected 
+//renders the badge image for the corresponding license if one was selected  
 function renderLicenseBadge(license) {
  if(license === "Apache"){
   return `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
@@ -30,7 +30,7 @@ function renderLicenseLink(license) {
 
 
 
-//creates the ecample readme file 
+//creates the example readme file 
 function generateMarkdown(data) {
   return `
   # ${data.name}
